@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Bookstore API Suite" verbose="1" parallel="classes" thread-count="4">
+
+    <listeners>
+        <listener class-name="com.allwyn.bookstore.support.RetryTransformer"/>
+    </listeners>
+
+    <test name="Books API">
+        <classes>
+            <class name="com.allwyn.bookstore.tests.books.GetBooksTests"/>
+            <class name="com.allwyn.bookstore.tests.books.CreateBookTests"/>
+            <class name="com.allwyn.bookstore.tests.books.UpdateBookTests"/>
+            <class name="com.allwyn.bookstore.tests.books.DeleteBookTests"/>
+        </classes>
+    </test>
+
+    <test name="Authors API">
+        <classes>
+            <class name="com.allwyn.bookstore.tests.authors.GetAuthorsTests"/>
+            <class name="com.allwyn.bookstore.tests.authors.CreateAuthorTests"/>
+            <class name="com.allwyn.bookstore.tests.authors.UpdateDeleteAuthorTests"/>
+        </classes>
+    </test>
+
+    <test name="Combined / End-to-end">
+        <classes>
+            <class name="com.allwyn.bookstore.tests.combined.BookCrudWorkflowTests"/>
+            <class name="com.allwyn.bookstore.tests.combined.AuthorBookIntegrationTests"/>
+            <class name="com.allwyn.bookstore.tests.combined.DataConsistencyTests"/>
+        </classes>
+    </test>
+
+    <test name="Contract / Schema">
+        <classes>
+            <class name="com.allwyn.bookstore.tests.contract.SchemaValidationTests"/>
+        </classes>
+    </test>
+
+</suite>
