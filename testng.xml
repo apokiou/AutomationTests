@@ -25,9 +25,10 @@
 
     <test name="Combined / End-to-end">
         <classes>
-            <class name="com.allwyn.bookstore.tests.combined.BookCrudWorkflowTests"/>
             <class name="com.allwyn.bookstore.tests.combined.AuthorBookIntegrationTests"/>
             <class name="com.allwyn.bookstore.tests.combined.DataConsistencyTests"/>
+            <class name="com.allwyn.bookstore.tests.combined.BookCrudWorkflowTests"/>
+            <class name="com.allwyn.bookstore.tests.combined.CreateThenModifyWorkflowTests"/>
         </classes>
     </test>
 
